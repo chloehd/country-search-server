@@ -8,12 +8,12 @@ const Countries = require("../bin/countries_metadata.json");
 router.get("/", (req, res, next) => {
   //let { lat = 48.864716, lng = 2.349014 } = req.query;
 
-  Countries.find((err, findCountries) => {
+  Countries.find((err) => {
     if (err) {
       console.log(err);
     }
     else {
-      res.json(findCountries);
+      res.json(Countries);
     }
   })
 })
@@ -22,14 +22,14 @@ router.get("/", (req, res, next) => {
 router.get("/location", (req, res, next) => {
   let { lat = 48.864716, lng = 2.349014 } = req.query;
 
-  Countries.find((err, findCountries) => {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      res.json(findCountries);
-    }
-  })
+  // Countries.find((err, findCountries) => {
+  //   if (err) {
+  //     console.log(err);
+  //   }
+  //   else {
+  //     res.json(findCountries);
+  //   }
+  // })
 })
 
 
