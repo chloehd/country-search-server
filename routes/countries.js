@@ -8,7 +8,7 @@ const Countries = require("../bin/countries_metadata.json");
 router.get("/", (req, res, next) => {
   //let { lat = 48.864716, lng = 2.349014 } = req.query;
 
-  Countries.find((err) => {
+  res.json(Countries).find((err) => {
     if (err) {
       console.log(err);
     }
