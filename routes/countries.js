@@ -5,7 +5,7 @@ const Countries = require("../bin/countries_metadata.json");
 
 
 /* GET country name */
-router.get("/countries", (req, res, next) => {
+router.get("/", (req, res, next) => {
   //let { lat = 48.864716, lng = 2.349014 } = req.query;
 
   Countries.find((err, findCountries) => {
@@ -19,7 +19,7 @@ router.get("/countries", (req, res, next) => {
 })
 
 /* GET country location */
-router.get("/countries/location", (req, res, next) => {
+router.get("/location", (req, res, next) => {
   let { lat = 48.864716, lng = 2.349014 } = req.query;
 
   Countries.find((err, findCountries) => {
